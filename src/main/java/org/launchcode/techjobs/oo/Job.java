@@ -22,8 +22,8 @@ public class Job {
 
     }
 
-    public Job(String name,Employer employer, Location location, PositionType positionType,
-               CoreCompetency coreCompetency){
+    public Job(String name, Employer employer, Location location, PositionType positionType,
+               CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -93,6 +93,42 @@ public class Job {
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
+
         this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        String returnString = "\n" + "ID: " + id;
+
+        if (this.name.equals("")) {
+            returnString += '\n' + "Name: " + "Data not available";
+        } else {
+            returnString += '\n' + "Name: " + name;
+        }
+        if (this.employer.equals("")) {
+            returnString += '\n' + "Employer: " + "Data not available";
+        } else {
+            returnString += '\n' + "Employer: " + employer;
+        }
+
+        if (this.location.equals("")) {
+            returnString += '\n' + "Location: " + "Data not available";
+        } else {
+            returnString += '\n' + "Location: " + location;
+        }
+        if (this.positionType.equals("")) {
+            returnString += '\n' + "Position Type: " + "Data not available";
+        } else {
+            returnString += '\n' + "Position Type: " + positionType;
+        }
+        if (this.coreCompetency.equals("")) {
+            returnString += '\n' + "Core Competency: " + "Data not available";
+        } else {
+            returnString += '\n' + "Core Competency: " + coreCompetency;
+        }
+       returnString += '\n';
+
+        return returnString;
     }
 }
